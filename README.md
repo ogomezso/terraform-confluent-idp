@@ -13,7 +13,7 @@ Confluent Terraform Identity Provider Access Management Module
 
 | Name | Version |
 |------|---------|
-| <a name="provider_confluent"></a> [confluent](#provider\_confluent) | 1.43.0 |
+| <a name="provider_confluent"></a> [confluent](#provider\_confluent) | >= 1.43.0 |
 
 ## Modules
 
@@ -37,7 +37,7 @@ No modules.
 | <a name="input_confluent_cloud_api_key"></a> [confluent\_cloud\_api\_key](#input\_confluent\_cloud\_api\_key) | Confluent Cloud API KEY. export TF\_VAR\_confluent\_cloud\_api\_key="API\_KEY" | `string` | n/a | yes |
 | <a name="input_confluent_cloud_api_secret"></a> [confluent\_cloud\_api\_secret](#input\_confluent\_cloud\_api\_secret) | Confluent Cloud API KEY. export TF\_VAR\_confluent\_cloud\_api\_secret="API\_SECRET" | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment id | `string` | n/a | yes |
-| <a name="input_grant_list"></a> [grant\_list](#input\_grant\_list) | n/a | <pre>list(object({<br>    identity_pool = object({<br>      display_name   = string<br>      description    = optional(string)<br>      identity_claim = string<br>      filter         = string<br>    })<br>    resource        = string<br>    resource_prefix = string<br>    role            = string<br>  }))</pre> | n/a | yes |
+| <a name="input_identity_pools"></a> [identity\_pools](#input\_identity\_pools) | n/a | <pre>list(object({<br>    identity_pool = object({<br>      display_name   = string<br>      description    = optional(string)<br>      identity_claim = string<br>      filter         = string<br>    })<br>    roles = list(object({<br>      resource        = string<br>      resource_prefix = string<br>      role            = string<br>    }))<br>  }))</pre> | n/a | yes |
 | <a name="input_identity_provider"></a> [identity\_provider](#input\_identity\_provider) | Identity provider Id | `string` | n/a | yes |
 
 ## Outputs

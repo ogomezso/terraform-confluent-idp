@@ -25,7 +25,7 @@ variable "identity_provider" {
   description = "Identity provider Id"
 }
 
-variable "grant_list" {
+variable "identity_pools" {
   type = list(object({
     identity_pool = object({
       display_name   = string
@@ -33,9 +33,11 @@ variable "grant_list" {
       identity_claim = string
       filter         = string
     })
-    resource        = string
-    resource_prefix = string
-    role            = string
+    roles = list(object({
+      resource        = string
+      resource_prefix = string
+      role            = string
+    }))
   }))
-
 }
+
